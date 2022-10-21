@@ -13,7 +13,6 @@ app.on('ready', () => {
 })
 
 const menuTemplate = [
-    { label: 'Electron' },
     {
         label: 'File',
         submenu: [
@@ -21,3 +20,7 @@ const menuTemplate = [
         ]
     }
 ]
+
+if (process.platform == 'darwin') {
+    menuTemplate.unshift({ label: 'Electron' })
+}
