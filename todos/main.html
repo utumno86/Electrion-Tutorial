@@ -17,5 +17,9 @@
             li.appendChild(text)
             document.querySelector('ul').appendChild(li)
         })
+
+        ipcRenderer.on('todo:clear', (_event) => {
+            document.querySelector('ul').innerHTML = ""
+        })
     </script>
 </body>
