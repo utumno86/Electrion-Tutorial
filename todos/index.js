@@ -58,6 +58,7 @@ if (process.env.NODE_ENV !== 'production') {
     menuTemplate.push({
         label: 'DEBUG!!!',
         submenu: [
+            { role: 'reload' },
             {
                 label: 'Open Developer Tools',
                 accelerator: process.platform === 'darwin' ? 'Command+Alt+I' : 'Ctrl+Shift+I',
