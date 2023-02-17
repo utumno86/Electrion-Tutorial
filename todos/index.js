@@ -46,3 +46,18 @@ const menuTemplate = [
 if (process.platform == 'darwin') {
     menuTemplate.unshift({ label: 'Electron' })
 }
+
+if (process.env.NODE_ENV !== 'production') {
+    menuTemplate.push({
+        label: 'DEBUG!!!',
+        submenu: [
+            {
+                label: 'Open Developer Tools',
+                accelerator: process.platform === 'darwin' ? 'Command+Alt+I' : 'Ctrl+Shift+I',
+                click(item, focusedWindow) {
+                    focusedWindow.toggleDevTools()
+                }
+            }
+        ]
+    })
+}
