@@ -7,6 +7,7 @@ let mainWindow
 app.on('ready', () => {
     mainWindow = new BrowserWindow({ webPreferences: { nodeIntegration: true, contextIsolation: false } })
     mainWindow.loadURL(`file://${__dirname}/main.html`)
+    mainWindow.on('closed', () => app.quit())
 
     const mainMenu = Menu.buildFromTemplate(menuTemplate)
     Menu.setApplicationMenu(mainMenu)
