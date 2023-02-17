@@ -17,7 +17,8 @@ function createAddWindow() {
     addWindow = new BrowserWindow({
         width: 300,
         height: 200,
-        title: 'Add New Todo'
+        title: 'Add New Todo',
+        webPreferences: { nodeIntegration: true, contextIsolation: false }
     })
     addWindow.loadURL(`file://${__dirname}/add.html`)
     addWindow.on('closed', () => addWindow = null)
